@@ -1,0 +1,133 @@
+
+Java script operators:
+Arithmetic operators:
++, - , * , 
+Multiplication *
+Division  / (Q)
+Modular division %(reminder)
+Exponential (raised to the power) **
+
+script>
+        let q =10
+        let c =20
+        c++
+        q--
+        document.write(q%c,"<br>")
+        document.write(q/c,"<br>")
+        document.write(q*c,"<br>")
+        document.write(q**c)
+       
+    </script>
+
+Java script operators:
+ 2. Assignment Operator:
+ Var student = “sweety”
++=
+-=
+/=
+%=
+  3. Logical operator: 
+And &&
+T and T =T
+Or  ||
+T or f =F
+Not !
+ 4.Relational(comparison) values:
+<
+>
+>=
+<=
+==
+===
+!=
+!===
+ 5.conditional operator: Ternary Operator(?)
+ First evaluates an expression for s true or false;
+ syntax:         
+ 6.Windows methods:
+ alert()
+alert("fuck off")
+        console.log(alert)
+
+ prompt(): to take input from user
+<script>
+        let a =prompt()
+        let b =prompt()
+        console.log(typeof(a))
+        document.write(typeof(a))
+        console.log(a+b)
+        document.write(a+b)
+ implementation                                               
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a =parseInt(prompt())
+        let b =prompt()
+        console.log(typeof(a))
+        document.write(typeof(a))
+        console.log(a+b)
+        document.write(a+b)
+        /*let a =prompt()
+        let b =prompt()
+        console.log(typeof(a))
+        document.write(typeof(a))
+        console.log(a+b)
+        document.write(a+b)
+        /*let name =prompt("Enter your name")
+        alert(name)
+        /*alert(" off")
+        console.log(alert)
+       /* let t = 40
+        let r =(t>40)? "Ac-off":"Ac-on" 
+        //ternary operstor or conditional operator
+        document.write(r) 
+        /*let a =105
+         let b ='105'
+         document.write(a===b,"<br>")
+        document.write(a==b,"<br>")
+
+        document.write(a==b, "<br>")
+        document.write(a<b && b>11,"<br>")
+         document.write(a!=b,"<br>") 
+        /*let a = 10
+       /* let b= 5
+        b -=30
+        a+= 30
+        document.write(a,"<br>")
+        // a =10+30 = 40
+        document.write(b,"<br>")
+        // B = -30+5)
+        /*let a = 10
+        let b= 5
+        document.write(a,"<br>")
+        // a =10+30 = 40
+        document.write(b,"<br>")
+        document.write(a>b || b>11,"<br>")
+        document.write(a>b && b>11,"<br>")
+        document.write(!(a<b)())
+       /* let a = 10
+        let b= 5
+        b -=30
+        a+= 30
+        document.write(a,"<br>")
+        // a =10+30 = 40
+        document.write(b,"<br>")
+        // B = -30+5 =-25*/
+       /* let q =10
+        let c =20
+        c++
+        q--
+        document.write(q%c,"<br>")
+        document.write(q/c,"<br>")
+        document.write(q*c,"<br>")
+        document.write(q**c)*/
+        
+    </script>
+</body>
+</html>
