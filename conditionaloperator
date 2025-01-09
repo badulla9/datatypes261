@@ -1,0 +1,105 @@
+document Conditional statements:
+To make the set of instructions execute only when the given condition is true
+Used to decide whether the code has to be executed or skip based on  the given condition
+The conditional statement executes in line by line(sequence)
+Block of code: set of instructions.
+The block of code it will execute only when that specific condition is True.
+Condition : an expression that evaluates an result(true or false)
+Ex: console.log(5>6)
+If
+If-else
+Else if
+Switch
+Ternary operator
+If condition:
+If the condition is true it will execute other wise it will skip. 
+Syntax:
+     if(condition){
+       - - -block of code  //block of code execute only when the specific condition is true.   
+      }
+         body>
+    <script>
+        let a = 4
+        let b = 5
+        if(a<b){
+            document.write("hello BABAI","<br>")
+        }
+        document.write("brilliant Babai","<br>")
+
+
+    </script>
+
+If else:
+    <script>
+        let a = 4
+        let b = 5
+        if(a<b){
+            document.write("hello BABAI","<br>")
+        }else{
+            document.write("hi sam","<br>")       }
+        document.write("brilliant Babai","<br>")
+else if:
+<body>
+    <script>
+        let age =prompt("Enter your age")
+        let name =prompt("Enter your name")
+        if(age<18){
+            alert(name+"your not going to marry")
+
+
+        }else if(age>35){
+            alert(name+"your too old  to get marry")
+        } else{
+            alert(name+  " perfect age to marry")
+        }  
+-----------------------------------------------------------------------------------------------------------------------------------
+implementation
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a =Number(prompt("Enter a score"))
+        let b= Number(prompt("Enter b score"))
+        let c=a+b
+        if((a>300 || b>300) && (c<500)){
+            alert("can team up")
+        }
+        else{
+            alert("cannot team up")
+        }
+
+        /*let age =prompt("Enter your age")
+        let name =prompt("Enter your name")
+        if(age<18){
+            alert(name+"your not going to marry")
+
+        }else if(age>35){
+            alert(name+"your too old  to get marry")
+        } else{
+            alert(name+  " perfect age to marry")
+        }  
+        alert("Welcome to my world")
+        /*let a = 4
+        let b = 5
+        if(a<b){
+            document.write("hello BABAI","<br>")
+        }else{
+            document.write("hi sam","<br>")
+        }
+        document.write("brilliant Babai","<br>")
+
+      /*  let a = 4
+        let b = 5
+        if(a<b){
+            document.write("hello BABAI","<br>")
+        }
+        document.write("brilliant Babai","<br>")*/
+
+    </script>
+</body>
+</html>
