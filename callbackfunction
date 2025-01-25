@@ -1,0 +1,98 @@
+Java script callbacks:
+Callback functions is a function that is passed argument to another functions
+You can pass the callback function as argument to another function
+Execution: The function receiving the callback will execute the callback at some point during execution(often at the end or after an asynchronous operations is done)
+Example:
+	
+
+
+
+<script>
+        function mainFunction(callback){
+            console.log("executing main function")
+            callback()
+
+
+        }
+        function callbackFunction(){
+            console.log("callbackfunction executed")
+        }
+        mainFunction(callbackFunction)
+    </script>
+
+MainFunction takes a callback as parameter
+Callbackfunction is passed to mainfunction
+Inside the mainfunction ,the callfunction function is called with callback()
+Example:
+	Passing named function  as a callback
+ function greet(name,callback){
+            console.log(`hello,${name}!`)
+            callback();
+            }
+            function sayGoodBye(){
+                console.log("GoodBye")
+            }
+            greet('pooji',sayGoodBye)
+
+
+
+Example:
+	Using an anonymous functions as callback:
+ function greet(name ,callback){
+        console.log('Hello'+name);
+        callback();
+    } greet(" srikanth",function(){
+        console.log("a linguist");
+    })
+
+
+------------------------------------------------------------------
+  code:
+------------
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function fetchData(callback){
+            console.log("fetching data....")
+        }setTimeout(function(){
+            console.log("data fetched....");
+            callback()
+        },2000);
+        function processData(){
+            console.log("process the fetched data...")
+        }
+        fetchData(processData);
+        /*function greet(name  ,callback){
+        console.log('Hello' +name);
+        callback();
+    }
+    greet(" srikanth",function(){
+        console.log("a linguist");
+    })
+        /*function greet(name,callback){
+            console.log(`hello,${name}!`)
+            callback();
+            }
+            function sayGoodBye(){
+                console.log("GoodBye")
+            }
+            greet('pooji',sayGoodBye)
+
+        /*function mainFunction(callback){
+            console.log("executing main function")
+            callback()
+
+        }
+        function callbackFunction(){
+            console.log("callbackfunction executed")
+        }
+        mainFunction(callbackFunction)*/
+    </script>
+</body>
+</html>
