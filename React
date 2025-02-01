@@ -1,0 +1,46 @@
+code:
+=========================================================================================================
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discount Calculator</title>
+</head>
+<body>
+    <script>
+        let amount = parseInt(prompt("Enter the amount: "));
+        let premiumMember = prompt("Are you a premium member? (yes/no)");
+
+        let discount = 0; 
+
+        if (amount >= 100) {
+            discount = amount * 0.20;
+            document.write("Discount: " + discount + "$");
+        }
+        else if (amount > 50 && amount < 100) {
+            discount = amount * 0.10;
+            document.write("Discount: " + discount + "$");
+        }
+        else if (premiumMember === "yes") {
+            discount = amount * 0.05;
+            document.write("Discount: " + discount + "$");
+        }
+        else {
+            document.write("No Discount");
+        }
+ 
+
+
+
+       /* let age = parseInt(prompt("Enter Your Age: "));
+        let citizen = prompt("Are You a Citizen? (yes/no)");
+        let citizenshipTest = prompt("Are you passed Citizenship Test?(YES/NO)")
+        if (age >= 18 && citizenshipTest.toLowerCase() === "yes") {
+            document.write("You Are Eligible To Vote");
+        } else {
+            document.write("You Are Not Eligible To Vote");
+        }*/
+    </script>
+</body>
+</html>
