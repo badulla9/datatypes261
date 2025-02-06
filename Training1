@@ -1,0 +1,68 @@
+APP.Js:
+========================================================================
+import React from 'react';
+import './App.css'
+import Welcome from './welcome';
+const App=()=>{
+  return(
+    <div style={{textAlign:'center',color:'red'}}>
+      <Welcome name="sreenath" greeting="Hello" />
+      <Welcome/>
+    </div>
+    
+  )
+}
+export default App;
+
+//const Welcome=()=> <h1 className='message'>Hello sreenath!</h1>
+//const MallaReddy=()=> <h1 className='Malla'>Welcome to MallaReddy University</h1>
+//function App() {
+  //return(
+    //<div className="App">
+      //  <Welcome/>
+     // <MallaReddy/>
+     //</div>
+  //)
+//}
+
+==========================================================================
+APP.CSS:
+==========================================================================
+
+
+.Malla{
+  color:rgb(244, 8, 8);
+  background-color: rgb(17, 1, 11);
+  font-size: 80px;
+  text-align: center;
+  width: 80%;
+  margin-left: 80px;
+  margin-right: 80px;
+  margin-bottom: 10px;
+
+}
+.message{
+  color:rgb(244, 8, 8);
+  background-color: rgb(17, 1, 11);
+  font-size: 80px;
+  text-align: center;
+  width: 80%;
+  margin-left: 80px;
+  margin-right: 80px;
+  margin-bottom: 10px;
+
+}
+.message{
+  color: rgb(249, 8, 8);
+  font-size: 80px;
+  background-color: rgb(16, 0, 3);
+  text-align:center;
+  width: auto;
+  margin-left: 60px;
+  margin-right: 60px;
+  height: 50px;
+  padding-top: 20px;
+  padding-bottom:80px;
+  border-radius:20px;
+}
+============================================================================
