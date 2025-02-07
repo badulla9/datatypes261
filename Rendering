@@ -1,0 +1,75 @@
+App.js:
+import React from "react";
+import "./FruitList.css";
+
+const FruitList = () => {
+  const fruits = ["apple", "cherry", "orange"];
+
+  return (
+    <div className="fruit-container">
+      <h1>Fruit List</h1>
+      <ul className="fruit-list">
+        {fruits.map((fruit, index) => (
+          <li key={index} className="fruit-item">
+            {fruit}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+export default FruitList;
+import React from 'react';
+function Greeting({isLoggedIn}){
+    if(isLoggedIn){
+        return<h1 greeting>Welcome Back!</h1>
+    }else{
+        return<h1 log>Please Login</h1>
+    }
+}
+export default Greeting;
+//import React from 'react';
+import './App.css'
+import Welcome from './welcome';
+//const App=()=>{
+  //return(
+   // <div style={{textAlign:'center',color:'red'}}>
+     // <Welcome name="sreenath" greeting="Hello" />
+      //<Welcome/>
+    //</div>
+    
+  //)
+//}
+//export default App;
+
+//const Welcome=()=> <h1 className='message'>Hello sreenath!</h1>
+//const MallaReddy=()=> <h1 className='Malla'>Welcome to MallaReddy University</h1>
+//function App() {
+  //return(
+    //<div className="App">
+      //  <Welcome/>
+     // <MallaReddy/>
+     //</div>
+  //)
+//}
+/*import React from 'react';
+import Greeting from './Greeting';
+function App() {
+  const isLoggedIn = true; 
+  return (
+    <div className="App">
+      <Greeting isLoggedIn={isLoggedIn} />
+    </div>
+  );
+}
+// export default App;*/
+import React from 'react';
+import FruitList from './FruitList';
+function App() {
+  return (
+    <div className="App">
+    <FruitList/>
+ </div>
+)}
+    export default App;
