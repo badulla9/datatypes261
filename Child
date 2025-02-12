@@ -1,0 +1,46 @@
+childA.js:// const ChildA=()=>{
+//     console.log("ChildA rendered")
+//     return <h2>This is Child A</h2>
+// };
+
+// export default ChildA;
+import { memo } from "react";
+function ChildA() {
+    console.log("Child A rendered");
+    return <h2> This is Child A</h2>;
+}
+export default memo(ChildA);
+childB.js:
+const ChildB=({count, increment})=>{
+    console.log("Child B rendered")
+    return(
+        <div>
+            <h1>Count: {count}</h1>
+            <button onClick={increment}>Increment</button>
+        </div>
+    )
+}
+
+
+
+export default ChildB;
+APP.js:
+import {useState} from 'react'
+
+import ChildA from "./childA"
+import ChildB from "./childB"
+
+const Parent =()=>{
+  const [count, setCount]=useState(0);
+  const increment =()=>{
+    setCount(c=>c+1);
+  };
+  return(
+    <div>
+      <ChildA/>
+      <ChildB count={count} increment={increment}/>
+    </div>
+  )
+};
+
+export default Parent;
