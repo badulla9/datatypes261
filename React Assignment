@@ -1,0 +1,123 @@
+App.js:
+import React,{createContext, useContext} from 'react'
+//create a context to hold the data
+const dataContext=createContext();
+
+//parent component
+function App(){
+  const data="I am Jaswith"
+  return(
+    ///provide the data to entire app
+    <dataContext.Provider value={data}>
+      <User1/>
+    </dataContext.Provider>
+  )
+}
+
+function User1(){
+  return(
+      <div>
+          <User2/>
+      </div>
+  )
+}
+
+function User2(){
+  return(
+      <div>
+          <User3/>
+      </div>
+  )
+}
+
+function User3(){
+  return(
+      <div>
+          <User4 />
+      </div>
+  )
+}
+
+function User4(){
+    const data=useContext(dataContext);
+    return(
+      <div>{data}</div>
+    )
+    
+}
+export default App;
+REACT ASSIGNMENT:
+============================================================
+import React, { createContext, useContext } from 'react';
+
+// 1. Using Prop Drilling
+function AppPropDrilling() {
+  const user = { name: 'BADULLA', email: 'badulla@gmail.com' };
+  return <User1 user={user} />;
+}
+
+function User1({ user }) {
+  return <User2 user={user} />;
+}
+
+function User2({ user }) {
+  return <User3 user={user} />;
+}
+
+function User3({ user }) {
+  return <Profile user={user} />;
+}
+
+function Profile({ user }) {
+  return (
+    <div>
+      <h2>Name: {user.name}</h2>
+      <h3>Email: {user.email}</h3>
+    </div>
+  );
+}
+
+// 2. Using React Context
+const UserContext = createContext();
+
+function AppContext() {
+  const user = { name: 'BADULLA', email: 'badulla@gmail.com' };
+  return (
+    <UserContext.Provider value={user}>
+      <User1Context />
+    </UserContext.Provider>
+  );
+}
+
+function User1Context() {
+  return <User2Context />;
+}
+
+function User2Context() {
+  return <User3Context />;
+}
+
+function User3Context() {
+  return <ProfileContext />;
+}
+
+function ProfileContext() {
+  const user = useContext(UserContext);
+  return (
+    <div>
+      <h2>Name: {user.name}</h2>
+      <h3>Email: {user.email}</h3>
+    </div>
+  );
+}
+
+export default function App() {
+  return (
+    <div>
+      <h1>Using Prop Drilling</h1>
+      <AppPropDrilling />
+      <hr />
+      <h1>Using React Context</h1>
+      <AppContext />
+</div>);
+}
