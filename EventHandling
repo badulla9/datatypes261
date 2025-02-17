@@ -1,0 +1,327 @@
+App.js:
+// // // // // // import React from 'react';
+// // // // // // import { ListProvider } from './ListContext';
+// // // // // // import AddItem from './AddItem';
+// // // // // // import ItemList from './ItemList';
+
+// // // // // // const App = () => {
+// // // // // //   return (
+// // // // // //     <ListProvider>
+// // // // // //       <div>
+// // // // // //         <h1>Item Management App</h1>
+// // // // // //         <AddItem />
+// // // // // //         <ItemList />
+// // // // // //       </div>
+// // // // // //     </ListProvider>
+// // // // // //   );
+// // // // // // };
+
+// // // // // // export default App;
+// // // // // import React,{useState,useEffect,useRef} from "react";
+
+// // // // // function CounterWithPrev(){
+// // // // //   const[count,setCount] = useState(0);
+// // // // //   const prevCountRef = useRef();
+
+// // // // //   useEffect(()=>{
+// // // // //     prevCountRef.current = count;
+// // // // //   },[count]);
+
+// // // // //   return(
+// // // // //     <div>
+// // // // //       <p>Count: {count}</p>
+// // // // //       <p>Prev Count: {prevCountRef.count}</p>
+// // // // //       <button onClick={() => setCount(count + 1)}>Increment</button>
+// // // // //     </div>
+// // // // //   )
+// // // // // }
+
+// // // // // export default CounterWithPrev;
+// // // // // function App(){
+// // // // //   const handleClick=()=>{
+// // // // //     alert("Button Clicked.");
+// // // // //   };
+// // // // //   return(
+// // // // //     <button onClick={handleClick}>Click me</button>
+// // // // //   )
+// // // // // }
+// // // // // export default App;
+// // // // // import React,{useState} from "react";
+// // // // // function App(){
+// // // // //   const [text,setText]=useState("")
+
+// // // // //   const handleChange=(event)=>{
+// // // // //     setText(event.target.value)
+// // // // //   }
+// // // // //   return(
+// // // // //     <div>
+// // // // //       <input type="text" value={text} onChange={handleChange} />
+// // // // //       <p>Your text: {text}</p>
+// // // // //     </div>
+// // // // //   )
+// // // // // }
+// // // // // export default App;
+// // // // import React,{ useState } from "react";
+// // // // import "./App.css"
+// // // // function App(){
+
+// // // //   const[isHovered, setIsHovered]=useState(false);
+
+// // // //   const handleMouseEnter=()=>{
+// // // //     setIsHovered(true);
+// // // //   }
+
+// // // //   const handleMouseLeave=()=>{
+// // // //     setIsHovered(false);
+// // // //   }
+
+// // // //   return(
+// // // //     <div className="App">
+// // // //       <button onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} 
+// // // //       style={{backgroundColor:isHovered ? "lightblue" : "lightgray",
+// // // //               color:isHovered ? "white" : "black"
+// // // //       }}> Hover Me</button>
+
+// // // //       {isHovered && <p>Mouse is over the button!</p>}
+// // // //     </div>
+// // // //     )
+// // // // }
+
+// // // // export default App;
+
+
+// // // import React,{ useState } from "react";
+// // // import "./App.css"
+// // // function App(){
+
+// // //   const[key, setKey]=useState("");
+
+// // //   const handleKeyDown=(event)=>{
+// // //     setKey(event.key);
+// // //   }
+
+// // //   return(
+// // //     <div className="App">
+// // //       <h1>Welcome to Keyboard!</h1>
+// // //       {key && <h2>Pressed key : {key}</h2>}
+// // //       <input type="text" onKeyDown={handleKeyDown} placeholder="Press any key"/>
+// // //     </div>
+// // //     )
+// // // }
+// // // export default App;
+// // import React, { useState } from "react";
+// // import "./App.css";
+
+// // function App() {
+// //   const [key, setKey] = useState("");
+
+// //   const handleKeyDown = (event) => {
+// //     setKey(event.key);
+// //   };
+
+// //   return (
+// //     <div className="App">
+// //       <div className="container">
+// //         <h1>Welcome to the Keyboard App!</h1>
+// //         {key && <h2>Pressed Key: {key}</h2>}
+// //         <input
+// //           type="text"
+// //           onKeyDown={handleKeyDown}
+// //           placeholder="Press any key"
+// //           className="keyboard-input"
+// //         />
+// //       </div>
+// //     </div>
+// //   );
+// // }
+
+// // export default App;
+// import React, { useState } from "react";
+// import "./App.css";
+
+// function App() {
+//   const [key, setKey] = useState("");
+
+//   const handleKeyDown = (event) => {
+//     setKey(event.key);
+//   };
+
+//   return (
+//     <div className="App">
+//       <div className="container">
+//         <h1>Interactive Keyboard</h1>
+//         {key && <h2 className="pressed-key">Pressed Key: {key}</h2>}
+//         <input
+//           type="text"
+//           onKeyDown={handleKeyDown}
+//           placeholder="Press any key"
+//           className="keyboard-input"
+//         />
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default App;
+import React, { useState } from "react";
+import "./App.css";
+
+function App() {
+  const [key, setKey] = useState("");
+
+  const handleKeyDown = (event) => {
+    setKey(event.key);
+  };
+
+  return (
+    <div className="App">
+      <div className="container">
+        <h1>Press a Key!</h1>
+        {key && <h2 className="pressed-key">You Pressed: {key}</h2>}
+        <input
+          type="text"
+          onKeyDown={handleKeyDown}
+          placeholder="Press any key"
+          className="keyboard-input"
+        />
+      </div>
+    </div>
+  );
+}
+
+export default App;
+App.css:
+/* Global Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #4e54c8, #8f94fb); /* Gradient background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  color: #fff;
+  transition: all 0.5s ease;
+}
+
+/* Container with 3D effect */
+.container {
+  text-align: center;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 30px;
+  padding: 40px 60px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease-in-out;
+  transform: translateY(0);
+  transform: perspective(800px) rotateX(10deg);
+  animation: containerHover 0.5s ease-in-out;
+}
+
+.container:hover {
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+  transform: translateY(-10px) perspective(800px) rotateX(0deg);
+}
+
+@keyframes containerHover {
+  0% {
+    transform: translateY(10px) perspective(800px) rotateX(10deg);
+  }
+  100% {
+    transform: translateY(0) perspective(800px) rotateX(0deg);
+  }
+}
+
+/* Heading Styling */
+h1 {
+  font-size: 2.5rem;
+  color: #fff;
+  margin-bottom: 20px;
+  background: linear-gradient(45deg, #ff6f61, #ff9800);
+  -webkit-background-clip: text;
+  color: transparent;
+  text-transform: uppercase;
+  animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 5px #ff6f61, 0 0 10px #ff6f61;
+  }
+  50% {
+    text-shadow: 0 0 15px #ff9800, 0 0 20px #ff9800;
+  }
+  100% {
+    text-shadow: 0 0 25px #ff6f61, 0 0 30px #ff6f61;
+  }
+}
+
+/* Key Pressed Text */
+.pressed-key {
+  font-size: 1.8rem;
+  color: #ffde00;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px #ffde00, 0 0 20px #ffde00;
+  animation: pulse 1.5s infinite alternate;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+/* Input field styling */
+.keyboard-input {
+  padding: 20px 30px;
+  font-size: 1.4rem;
+  border: none;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  width: 80%;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(0);
+}
+
+.keyboard-input:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 15px rgba(255, 223, 0, 0.8);
+  transform: translateY(-5px);
+}
+
+/* Input field hover effect */
+.keyboard-input:hover {
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 15px #ff6f61, 0 0 30px #ff6f61;
+}
+
+/* Hover effect when you click */
+.keyboard-input:active {
+  transform: translateY(2px);
+}
+
+/* Responsive Styles */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+  }
+  .keyboard-input {
+    font-size: 1.2rem;
+    padding: 15px 20px;
+    width: 100%;
+  }
+}
