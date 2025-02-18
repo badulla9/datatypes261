@@ -1,0 +1,306 @@
+import React, { useState } from 'react';
+import './styles/main.css';
+
+const Header = () => {
+  const [activeLink, setActiveLink] = useState('Home');
+
+  const handleClick = (link) => {
+    setActiveLink(link);
+  };
+
+  return (
+    <header className="header">
+      <div className="logo">TechU</div>
+      <nav>
+        <ul className="nav-links">
+          <li>
+            <a
+              href="#home"
+              className={activeLink === 'Home' ? 'active' : ''}
+              onClick={() => handleClick('Home')}
+            >
+              Home
+            </a>
+          </li>
+          <li>
+            <a
+              href="#about"
+              className={activeLink === 'About' ? 'active' : ''}
+              onClick={() => handleClick('About')}
+            >
+              About
+            </a>
+          </li>
+          <li>
+            <a
+              href="#courses"
+              className={activeLink === 'Courses' ? 'active' : ''}
+              onClick={() => handleClick('Courses')}
+            >
+              Courses
+            </a>
+          </li>
+          <li>
+            <a
+              href="#contact"
+              className={activeLink === 'Contact' ? 'active' : ''}
+              onClick={() => handleClick('Contact')}
+            >
+              Contact
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+  );
+};
+
+export default Header;
+import React from 'react';
+import './styles/main.css';
+
+const Hero = () => {
+  return (
+    <section className="hero">
+      <h1>Welcome to Tech University</h1>
+      <p>Your gateway to a brighter future</p>
+    </section>
+  );
+};
+
+export default Hero;
+import React from 'react';
+import './styles/main.css';
+
+const About = () => {
+  return (
+    <section className="about" id="about">
+      <h2>About Tech University</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.
+      </p>
+      <img src="https://via.placeholder.com/400" alt="Tech University" />
+    </section>
+  );
+};
+
+export default About;
+import React, { useState } from 'react';
+import './styles/main.css';
+
+const Courses = () => {
+  const [activeCourse, setActiveCourse] = useState(null);
+
+  const courses = [
+    { id: 1, name: 'Computer Science', description: 'Learn the fundamentals of programming and software development.' },
+    { id: 2, name: 'Electrical Engineering', description: 'Explore the world of circuits, signals, and systems.' },
+    { id: 3, name: 'Business Administration', description: 'Gain insights into management, finance, and marketing.' },
+  ];
+
+  const handleClick = (id) => {
+    setActiveCourse(activeCourse === id ? null : id);
+  };
+
+  return (
+    <section className="courses" id="courses">
+      <h2>Our Courses</h2>
+      <ul>
+        {courses.map((course) => (
+          <li key={course.id} onClick={() => handleClick(course.id)}>
+            <h3>{course.name}</h3>
+            {activeCourse === course.id && <p>{course.description}</p>}
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+};
+
+export default Courses;
+import React, { useState } from 'react';
+import './styles/main.css';
+
+const Contact = () => {
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setSubmitted(true);
+  };
+
+  return (
+    <section className="contact" id="contact">
+      <h2>Contact Us</h2>
+      {submitted ? (
+        <p>Thank you for contacting us!</p>
+      ) : (
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            name="name"
+            placeholder="Name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+          <textarea
+            name="message"
+            placeholder="Message"
+            value={formData.message}
+            onChange={handleChange}
+            required
+          />
+          <button type="submit">Submit</button>
+        </form>
+      )}
+    </section>
+  );
+};
+
+export default Contact;
+import React from 'react';
+import './styles/main.css';
+
+const Footer = () => {
+  return (
+    <footer className="footer">
+      <p>© 2025 Tech University. All rights reserved.</p>
+      <div className="social-icons">
+        <a href="#facebook">FB</a>
+        <a href="#twitter">TW</a>
+        <a href="#instagram">IG</a>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
+import React from 'react';
+import Header from './components/Header';
+import Hero from './components/Hero';
+import About from './components/About';
+import Courses from './components/Courses';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
+import './styles/main.css';
+
+const App = () => {
+  return (
+    <div className="app">
+      <Header />
+      <Hero />
+      <About />
+      <Courses />
+      <Contact />
+      <Footer />
+    </div>
+  );
+};
+
+export default App;
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #333;
+  color: #fff;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin-left: 1rem;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav-links a.active {
+  font-weight: bold;
+}
+
+.hero {
+  text-align: center;
+  padding: 2rem;
+  background-color: #f4f4f4;
+}
+
+.about, .courses, .contact {
+  padding: 2rem;
+  text-align: center;
+}
+
+.courses ul {
+  list-style: none;
+}
+
+.courses li {
+  margin: 1rem 0;
+  cursor: pointer;
+}
+
+.contact form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact input, .contact textarea {
+  width: 100%;
+  max-width: 400px;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+}
+
+.contact button {
+  padding: 0.5rem 1rem;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #333;
+  color: #fff;
+}
+
+.social-icons a {
+  color: #fff;
+  margin: 0 0.5rem;
+  text-decoration: none;
+}
