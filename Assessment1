@@ -1,0 +1,89 @@
+package com.mru.entity;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
+public class Students {
+
+	@Id
+private int id;
+private String name;
+private String emailId;
+private int phoneNo;
+private String branch;
+public int getId() {
+	return id;
+}
+public void setId(int id) {
+	this.id = id;
+}
+public String getName() {
+	return name;
+}
+public void setName(String name) {
+	this.name = name;
+}
+public String getEmailId() {
+	return emailId;
+}
+public void setEmailId(String emailId) {
+	this.emailId = emailId;
+}
+public int getPhoneNo() {
+	return phoneNo;
+}
+public void setPhoneNo(int phoneNo) {
+	this.phoneNo = phoneNo;
+}
+public String getBranch() {
+	return branch;
+}
+public void setBranch(String branch) {
+	this.branch = branch;
+}
+@Override
+public String toString() {
+	return "Students [id=" + id + ", name=" + name + ", emailId=" + emailId + ", phoneNo=" + phoneNo + ", branch="
+			+ branch + "]";
+}
+public Students(int id, String name, String emailId, int phoneNo, String branch) {
+	super();
+	this.id = id;
+	this.name = name;
+	this.emailId = emailId;
+	this.phoneNo = phoneNo;
+	this.branch = branch;
+}
+public Students() {
+	super();
+	// TODO Auto-generated constructor stub
+}
+
+}
+
+
+package com.mru.repo;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.mru.entity.Students;
+
+public interface StudentsRepo extends JpaRepository<Students, java.lang.Integer> {
+	
+
+}
+@GetMapping("/students")
+	 
+	public List<Students> getAllStudents(){
+		return service.getAllStudents();
+	}
+spring.application.name=ecommercebackend
+spring.datasource.url=jdbc:mysql://localhost:3306/ecommerce_db
+spring.datasource.username=root
+spring.datasource.password=mysql
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
+server.port=8081
